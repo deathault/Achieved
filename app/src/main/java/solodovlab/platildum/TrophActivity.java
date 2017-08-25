@@ -81,58 +81,11 @@ public class TrophActivity extends AppCompatActivity {
 
             } catch (IOException e) {
                 //Если не получилось считать
-                System.out.println("Вруби инет, пидор!");
+
             }
 
             String css = "<style>" +
-                    "body{background:#2b3137;}" +
-            ".tlhsltpl_helps_header_helps{display:none;}" +
-            ".tltstpl_mini_box_table{width:100%;}" +
-        	".tlhsltpl_helps_header_helps{display:none;}" +
-        	".tltstpl_mini_box_table{width:100%;}" +
-        	".tltstpl_tt_trops_title_box a {color: #ff2186;}" +
-        	".tlhsltpl_helps_counter_2 {display: none;}" +
-            "img.tltstpl_tt_logo_img {border-radius: 5px;" +
-                "border: 6px solid #24292e;" +
-"           }" +
-"	.tltstpl_tt_trops_add_info {" +
-"               display: none;" +
-"           }" +
-"	.tltstpl_tt_helps_onload {" +
-"               display: none;" +
-"           }" +
-"	.tltstpl_tt_trops_description_box {" +
-"               background: #1c1f23;" +
-"               color: #6a6a6a;" +
-"               padding: 20px;" +
-"           }" +
-"	.tltstpl_tt_trops_title a {" +
-"               text-decoration: none;" +
-"               color: #ffffff;" +
-"           }    " +
-" .tltstpl_tt_logo_box {text-align: center;}" +
-"	.tltstpl_tt_trops_title_box {text-align: center;}" +
-"	.tltstpl_tt_trops_title a {" +
-"                    display: inline-block;" +
-           " background-color: #24292e;" +
-           " padding-top: 15px;" +
-           " padding-bottom: 15px;" +
-           " margin-top: 15px;" +
-           " width: 100%;" +
-"            }" +
-                    ".tltstpl_tt_trops_partners_count{display:none;}" +
- "                  .sekr {" +
- "              width: 100%;" +
- "              display: inline-block;" +
- "              background: #24292e;" +
- "              padding: 0 0 17px;" +
- "          }" +
- "      .sekr span {" +
- "              color: #a5a5a5;" +
- "              background: #5c6771;" +
- "              border-radius: 5px;" +
- "              padding: 5px;" +
- "          }" +
+                    "body{background:#2b3137}img{max-width:100%;}.tltstpl_mini_box_table{width:100%}.tlhsltpl_helps_header_helps{display:none}.tltstpl_mini_box_table{width:100%}.tltstpl_tt_trops_title_box a{color:#ff2186}.tlhsltpl_helps_counter_2{display:none}img.tltstpl_tt_logo_img{border-radius:5px;border:6px solid #24292e}.tltstpl_tt_trops_add_info{display:none}.tltstpl_tt_trops_description_box{background:#1c1f23;color:#6a6a6a;padding:20px}.tltstpl_tt_trops_title a{text-decoration:none;color:#ffffff}.tltstpl_tt_logo_box{text-align:center}.tltstpl_tt_trops_title_box{text-align:center}.tltstpl_tt_trops_title a{display:inline-block;background-color:#24292e;padding-top:15px;padding-bottom:15px;margin-top:15px;width:100%}.tltstpl_tt_trops_partners_count{display:none}.sekr{width:100%;display:inline-block;background:#24292e;padding:0 0 17px}.sekr span{color:#a5a5a5;background:#5c6771;border-radius:5px;padding:5px}.tlhsltpl_helps_text_helps{background:#24292e;color:#55606b;margin-top:-2px;padding:15px 15px 20px 20px}.tlhsltpl_helps_text_helps a{color:#fff;text-decoration:none}.tlhsltpl_helps_text_helps ul{padding-left:0}.tlhsltpl_helps_text_helps ul li b{color:#677486}.tlhsltpl_helps_text_helps ul li{color:#55606b;list-style:none}.tltstpl_tt_trops_description_box{padding-bottom:18px}.tlhsltpl_add_helps_header{display:none}.tlhsltpl_add_helps_body{color:#55606b;background:#1c1f23;padding:17px}.tlhsltpl_add_helps_body a{color:#fff;text-decoration:none}.tlhsltpl_helps_admin_helps{display:none}.tlhsltpl_helps_header_hearts{display:none}.tlhsltpl_helps_administer_text_hearts{display:none}.tlhsltpl_helps_admin_controller_left{display:none}"+
                     "</style>";
 
 
@@ -149,11 +102,12 @@ public class TrophActivity extends AppCompatActivity {
             fullpage2 = fullpage2.replace("</td>", "</div>");
             fullpage2 = fullpage2.replace("</tr>" , "</div>");
             fullpage2 = fullpage2.replace("(Секретный)" , "<span class=\"sekr\"><span>Секретный</span></span>");
+            fullpage2 = fullpage2.replace("min-height: 37px;","");
 
 
             html = fullpage2;
-            System.out.println(html);
 
+            System.out.println(html);
 
             return null;
         }
@@ -164,7 +118,7 @@ public class TrophActivity extends AppCompatActivity {
             progressBar.setVisibility(ProgressBar.INVISIBLE);
 
            WebView webview = (WebView) findViewById(R.id.webview);
-
+           webview.getSettings().setJavaScriptEnabled(true);
            webview.loadDataWithBaseURL(null, html,"text/html; charset=utf-8", "UTF-8", null);
         }
 
