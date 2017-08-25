@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#24292e"
+    tools:context="solodovlab.platildum.MainActivity">
+
+    <WebView
+        android:background="#24292e"
+        android:id="@+id/webView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="50dp"
+        />
+
+    <EditText
+        android:textColor="#fff"
+        android:background="#24292e"
+        android:id="@+id/editText"
+        android:layout_width="368dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text=""
+        android:hint="Введите название игры..."
+        tools:layout_editor_absoluteY="0dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
+
+
+</android.support.constraint.ConstraintLayout>
